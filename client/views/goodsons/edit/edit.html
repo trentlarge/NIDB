@@ -1,0 +1,165 @@
+<template name="GoodsonsEdit">
+	<div class="page-container container" id="content">
+		<div class="row" id="title_row">
+			<div class="col-md-12">
+				<div id="page_menu" class="pull-right">
+				</div>
+			</div>
+		</div>
+		{{> GoodsonsEditEditForm}}
+	</div>
+</template>
+
+<template name="GoodsonsEditEditForm">
+	<div class="">
+		<h2 id="component-title">
+			Edit Goodson Results
+		</h2>
+		<form id="form" role="form">
+			{{#if errorMessage}}
+			<div class="alert alert-warning">
+				{{errorMessage}}
+			</div>
+			{{/if}}		
+		
+			{{#if infoMessage}}
+			<div class="alert alert-success">
+				{{infoMessage}}
+			</div>
+			{{/if}}
+			<div class="form-group  field-customer-id">
+				<label for="customerId">
+					Client
+				</label>
+				<div class="input-div">
+					<select class="form-control" name="customerId" required="required" autofocus="autofocus">
+						{{#each customer_list}}
+						<option value="{{_id}}" {{optionIsSelected ../goodson.customerId _id}}>
+							{{name}}
+						</option>
+						{{/each}}
+					</select>
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-date">
+				<label for="date">
+					Invoice date
+				</label>
+				<div class="input-div">
+					<div class="input-group date">
+						<input type="text" name="date" value="{{formatDate goodson.date 'MM-DD-YYYY'}}" class="form-control" required="required" data-type="date" data-format="MM-DD-YYYY">
+						<span class="input-group-addon">
+							<i class="fa fa-calendar">
+							</i>
+						</span>
+					</div>
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-one">
+				<label for="one">
+					Question 1
+				</label>
+				<div class="input-div">
+					<input type="text" name="one" value="{{goodson.one}}" class="form-control">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-two">
+				<label for="two">
+					Question 2
+				</label>
+				<div class="input-div">
+					<input type="text" name="two" value="{{goodson.two}}" class="form-control">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-three">
+				<label for="three">
+					Question 3
+				</label>
+				<div class="input-div">
+					<input type="text" name="three" value="{{goodson.three}}" class="form-control">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-four">
+				<label for="four">
+					Question 4
+				</label>
+				<div class="input-div">
+					<input type="text" name="four" value="{{goodson.four}}" class="form-control">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-five">
+				<label for="five">
+					Question 5
+				</label>
+				<div class="input-div">
+					<input type="text" name="five" value="{{goodson.five}}" class="form-control">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-six">
+				<label for="six">
+					Question 6
+				</label>
+				<div class="input-div">
+					<input type="text" name="six" value="{{goodson.six}}" class="form-control">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-six">
+				<label for="six">
+					Question 7
+				</label>
+				<div class="input-div">
+					<input type="text" name="six" value="{{goodson.six}}" class="form-control">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="submit-div">
+					<button id="form-submit-button" class="btn btn-success" type="submit">
+						<span class="fa fa-check">
+						</span>
+						Save
+					</button>
+					<a href="#" id="form-cancel-button" class="btn btn-default">
+						Cancel
+					</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</template>
+
